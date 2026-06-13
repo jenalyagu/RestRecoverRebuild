@@ -1,17 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface LogoProps {
-  variant?: "light" | "dark";
-  size?: "sm" | "md" | "lg";
+  size?: "nav" | "sm" | "md" | "lg" | "xl";
+  href?: string;
 }
 
-export default function Logo({ variant = "dark", size = "md" }: LogoProps) {
-  const sizeClasses = { sm: "text-xl", md: "text-2xl", lg: "text-3xl" };
-  const color = variant === "light" ? "rgba(255,248,240,0.95)" : "var(--color-charcoal)";
+// RRRPrimary.png is 1254×1254 — square, transparent bg
+// "nav" size is tuned to sit inside a 64px tall navbar with the subtitle legible
+// RRRPrimary.png is 1024×639 (cropped to content, transparent bg)
+const WIDTHS: Record<string, number> = {
+  nav: 150,
+  sm:  130,
+  md:  200,
+  lg:  260,
+  xl:  340,
+};
+const ASPECT = 639 / 1024;
+
+export default function Logo({ size = "nav", href = "/" }: LogoProps) {
+  const w = WIDTHS[size];
+  const h = Math.round(w * ASPECT);
   return (
-    <Link href="/" style={{ color, textDecoration: "none", fontFamily: "var(--font-serif)", fontWeight: 500 }}
-      className={sizeClasses[size]}>
-      RestRecoverRebuild
+    <Link href={href} style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }}>
+      <Image
+        src="/RRRPrimary.png"
+        alt="RestRecoverRebuild — AI-Powered Recovery System"
+        width={w}
+        height={h}
+        priority
+        style={{ objectFit: "contain", display: "block" }}
+      />
     </Link>
   );
 }

@@ -5,18 +5,20 @@
   --color-linen: #F2EBE0;
   --color-sand: #E8DDD0;
   --color-charcoal: #1C1714;
-  --color-rose: #D63F6E;
-  --color-rose-dark: #B02D57;
-  --color-rose-light: #F9E4ED;
-  --color-sage: #0E7A47;
-  --color-sage-light: #E4F4ED;
+  --color-rose: #C4917A;
+  --color-rose-dark: #A0715C;
+  --color-rose-light: #F5DDD3;
+  --color-blush: #F2D5C8;
+  --color-sage: #7A9E7E;
+  --color-sage-light: #E4EFE5;
+  --color-sage-dark: #4A7A50;
   --color-forest: #1E1628;
   --color-purple: #7C5CFC;
   --color-teal: #006B5E;
   --color-amber: #8B5A00;
 
-  --font-serif: var(--font-newsreader), "Newsreader", Georgia, serif;
-  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-plus-jakarta), "Inter", system-ui, sans-serif;
 
   --shadow-sm: 0 1px 3px rgba(28,23,20,0.08), 0 1px 2px rgba(28,23,20,0.04);
   --shadow-md: 0 4px 12px rgba(28,23,20,0.10), 0 2px 4px rgba(28,23,20,0.06);
